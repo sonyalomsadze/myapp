@@ -18,7 +18,7 @@ tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
 model = GPT2LMHeadModel.from_pretrained('gpt2')
 
 # Fine-tune the model on a specific dataset
-train_dataset = TextDataset(tokenizer=tokenizer, file_path='/content/shakespear.txt', block_size=128)
+train_dataset = TextDataset(tokenizer=tokenizer, file_path='https://raw.githubusercontent.com/sonyalomsadze/myapp/main/shakespear.txt', block_size=128)
 data_collator = DataCollatorForLanguageModeling(tokenizer=tokenizer, mlm=False)
 training_args = TrainingArguments(
     output_dir='./results',
