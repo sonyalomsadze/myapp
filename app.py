@@ -87,4 +87,4 @@ async def generate_text(request: GenerateTextRequest):
     # Return the generated text as the response
     return GenerateTextResponse(text=generated_text)
 
-!uvicorn app:app --reload
+#!uvicorn app:app --reload
