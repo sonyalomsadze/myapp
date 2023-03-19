@@ -40,9 +40,10 @@ trainer.train()
 input_ids = tokenizer.encode("KING LEAR:", return_tensors='pt')
 attention_mask = torch.ones(input_ids.shape, dtype=torch.long, device=model.device)
 pad_token_id = tokenizer.eos_token_id
-generated_text = model.generate(input_ids, max_length=100, do_sample=True, temperature=0.7, attention_mask=attention_mask, pad_token_id=pad_token_id)
+generated_text = model.generate(input_ids, max_length=100, do_sample=True, 
+                                =0.7, attention_mask=attention_mask, pad_token_id=pad_token_id)
 generated_text = tokenizer.decode(generated_text[0], skip_special_tokens=True)
-print(generated_text)
+#print(generated_text)
 
 
 model.save_pretrained("saved_model")
